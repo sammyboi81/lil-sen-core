@@ -1,5 +1,3 @@
-# Lil Sen: Command Core (FastAPI + Supabase Starter for Render + GitHub Integration)
-
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 import httpx
@@ -9,14 +7,12 @@ import os
 
 app = FastAPI()
 
-# Define incoming command model
 class Command(BaseModel):
     agent_name: str
     purpose: str
     functions: list[str]
     tone: str = "friendly"
 
-# Endpoint to receive new agent commands
 @app.post("/create-agent")
 async def create_agent(cmd: Command):
     agent_id = str(uuid.uuid4())
