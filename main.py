@@ -1,5 +1,3 @@
-# Create a valid and clean main.py for the lil-sen-core backend
-main_py_code = '''
 from fastapi import FastAPI, Request, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, Field
